@@ -4,7 +4,7 @@ import java.util.HashMap;
 
 // Problem: Two Sum
 // Brute force: O(n²) time, O(1) space
-// Optimized: O(n) time, O(n) space
+// Optimized(HashMap): O(n) time, O(n) space
 
 
 public class TwoSum {
