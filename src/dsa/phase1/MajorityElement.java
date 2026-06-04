@@ -2,7 +2,7 @@ package dsa.phase1;
 
 //Problem: Majority Elements
 //Brute Force: O(n) time O(n) space
-//Optimised Sol(Boyer-Moore Voting Algorithm): O() time, O() space
+//Optimised Sol(Boyer-Moore Voting Algorithm): O(n) time, O(1) space
 
 import java.util.HashMap;
 
