@@ -1,5 +1,12 @@
 package dsa.phase1;
 
+/*
+ * LC 53 - Maximum Subarray
+ * Pattern: Kadane's Algorithm (Greedy / Running Max)
+ *
+ * Brute Force: try all subarrays with nested loop — O(n²) O(1)
+ * Kadane's:    at each index, extend or start fresh — O(n) O(1) ✅
+ */
 
 public class MaximumSubarray {
 
