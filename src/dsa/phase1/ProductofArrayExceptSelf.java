@@ -6,7 +6,8 @@ import java.util.Arrays;
  * Pattern: Prefix + Suffix Product
  *
  * Brute Force: for each i, multiply all except i — O(n²) O(n)
- * Prefix+Suffix: precompute left[] and right[] arrays — O(n) O(n) ✅
+ * Prefix+Suffix: precompute left[] and right[] arrays — O(n) O(n)
+ * Space Optimized: use ans[] for left, single variable for right — O(n) O(1)
  */
 
 public class ProductofArrayExceptSelf {
@@ -16,7 +17,7 @@ public class ProductofArrayExceptSelf {
         int[] ans= new int[nums.length];
 
         for(int i=0; i<nums.length; i++){
-           int result=1;     //[1,2,3,4]
+            int result=1;     //[1,2,3,4]
             for(int j=0; j<nums.length; j++){
                 if(j!=i) result= result*nums[j];
 
@@ -58,12 +59,29 @@ public class ProductofArrayExceptSelf {
         return ans;
 
     }
+
+    public int[] productOptimised2(int[] nums){
+
+        int[] ans = new int[nums.length];
+        ans[0]=1;
+        for(int i=1; i<nums.length; i++){
+            ans[i]=ans[i-1]* nums[i-1];
+        }
+
+        int right=1;
+        for(int i=(nums.length-1); i>=0; i--){
+                ans[i]=ans[i]*right;
+                right*=nums[i];
+        }
+        return ans;
+
+    }
     public static void main(String[] args){
         ProductofArrayExceptSelf product= new ProductofArrayExceptSelf();
         int[] answer= product.productBrute(new int[]{2,4,6,8});
         System.out.println(Arrays.toString(answer));
 
-        int[] answer1= product.productOptimised(new int[]{2,4,6,8});
+        int[] answer1= product.productOptimised2(new int[]{2,4,6,8});
         System.out.println(Arrays.toString(answer1));
     }
 }
