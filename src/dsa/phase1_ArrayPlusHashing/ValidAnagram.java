@@ -22,6 +22,16 @@ public class ValidAnagram {
 
     }
 
+    public boolean validAnagramBrute2(String s, String t){
+        char[] arr1 = s.toCharArray();
+        char[] arr2 = t.toCharArray();
+
+        Arrays.sort(arr1);
+        Arrays.sort(arr2);
+
+        return Arrays.equals(arr1,arr2);
+    }
+
     public boolean validAnagramOptimised(String s, String t){
         if(s.length() != t.length()){
             return false;
@@ -46,6 +56,12 @@ public class ValidAnagram {
         ValidAnagram valid =new ValidAnagram();
         boolean result = valid.validAnagramBrute("anagrmam", "nakgaram");
         System.out.println(result);
+
+
+        boolean result3 = valid.validAnagramBrute2("anagrm", "nakgar");
+        System.out.println(result3);
+        boolean result4 = valid.validAnagramBrute2("aacv", "caav");
+        System.out.println(result4);
 
         boolean result1= valid.validAnagramOptimised("analgram", "nalagram");
         System.out.println(result1);

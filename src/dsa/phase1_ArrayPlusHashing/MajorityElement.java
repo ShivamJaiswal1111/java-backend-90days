@@ -8,6 +8,7 @@ import java.util.HashMap;
 
 public class MajorityElement {
 
+
     public int majorityElementBrute(int[] nums){
         HashMap<Integer, Integer> map= new HashMap<>();
         int n= nums.length;
